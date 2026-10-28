@@ -1,0 +1,13 @@
+# Real upstream filtering is supplied by your selected DNS resolver.
+# These two LOCAL rules are deliberately synthetic demo domains.
+version = 1
+mode = "enforce"
+default_action = "allow"
+block_domains = ["malware.test", "phishing.test"]
+allow_domains = []
+block_networks = []
+block_non_global = true
+# Explicitly list internal zones here only if private answers are intended.
+allow_private_for = []
+# Paths are relative to this TOML file. Files contain one domain per line.
+feed_files = []

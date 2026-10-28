@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.coverage
+.ruff_cache/
+*.log
+.env
+local-policy.toml
+local-feeds/

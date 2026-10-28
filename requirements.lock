@@ -1,0 +1,4 @@
+# Runtime dependency. Hash is for the universal wheel from PyPI.
+# Upgrade intentionally, review upstream security notes, then regenerate hash.
+dnspython==2.9.0 \
+    --hash=sha256:9a4aedb833c3c1b49214d04d44d3032ab7a9135f7c1d29a549b4ff78fd82fda9

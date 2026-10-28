@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "internet-guard"
+version = "0.1.0"
+description = "Experimental loopback-only protective DNS with explicit domain and IP policy"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["dnspython==2.9.0"]
+
+[project.scripts]
+internet-guard = "internet_guard.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["internet_guard*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+# Negative security fixtures and deterministic fuzz inputs are intentional.
+"tests/*" = ["S104", "S311", "S603", "S607", "S323"]

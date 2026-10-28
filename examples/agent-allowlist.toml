@@ -1,0 +1,11 @@
+# Replace these example domains with the agent's approved destinations AND
+# their required CNAME/SVCB/HTTPS targets. DNS policy is not an egress firewall.
+version = 1
+mode = "enforce"
+default_action = "block"
+allow_domains = ["example.com"]
+block_domains = ["malware.test", "phishing.test"]
+block_networks = []
+block_non_global = true
+allow_private_for = []
+feed_files = []
