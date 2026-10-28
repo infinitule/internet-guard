@@ -27,6 +27,19 @@ Its machine-readable result is [dependency-audit.json](dependency-audit.json).
 Lint exclusions in tests cover intentional negative fixtures; the production
 sinkhole-format literal is annotated as not being a listening address.
 
+## Remote CI evidence
+
+[Verify run 40764139710](https://github.com/infinitule/internet-guard/actions/runs/40764139710)
+completed successfully for commit `cbc4775db00dd3455821cfb54e0e3a9f714c7d8b`.
+All four jobs passed: Python 3.11, 3.12, 3.13, and 3.14. Each job completed
+dependency installation, the OpenSSL prerequisite check, the test suite, the
+offline UDP/TCP demonstration, both policy checks, and source compilation.
+
+The initial publication's workflow was rejected before jobs started because
+the dependency-install command needed YAML block quoting. The referenced
+successful run includes that correction. It does not include a public-upstream
+connectivity or live-threat-detection check.
+
 ## Not verified here
 
 The live public Quad9 HTTPS probe could not connect from this runtime:
@@ -35,10 +48,12 @@ transport implementation, but do not verify public routing, Quad9 availability,
 its current threat detections, or certificate-chain compatibility on a target
 device. The offline demo uses synthetic answers, not live malware.
 
-The GitHub workflow is prepared for Python 3.11, 3.12, 3.13, and 3.14. Its remote
-matrix has not run here; only Python 3.12 was executed locally. The pinned GitHub
-Action references were resolved from the official repositories' v6 tag API
-responses on the preparation date. No remote CI result is claimed.
+The GitHub workflow targets Python 3.11, 3.12, 3.13, and 3.14. Only Python 3.12
+was executed in the local preparation environment. Remote outcomes are recorded
+in the repository's [Actions runs](https://github.com/infinitule/internet-guard/actions);
+inspect the run for the commit you intend to use. The pinned GitHub Action
+references were resolved from the official repositories' v6 tag API responses
+on the preparation date. Local results above do not imply a remote matrix pass.
 
 No automatic OS/router deployment, independent penetration test, sustained-load
 benchmark, broad resolver interoperability test, kernel egress enforcement, or
